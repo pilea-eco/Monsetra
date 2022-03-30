@@ -61,7 +61,7 @@ export default defineComponent({
 
   user-select: none;
   color: v-bind(colour);
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 500;
   white-space: nowrap;

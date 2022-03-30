@@ -59,15 +59,15 @@ export default defineComponent({
   justify-content: center;
   align-items: center;
 
-  padding: 14px 20px;
+  padding: 10px 20px;
   border-radius: 8px;
   background-color: v-bind(_backgroundColour);
   box-shadow: 0px 5px 13px -5px v-bind(_backgroundColour);
 
   user-select: none;
   color: v-bind(colour);
-  font-size: 1.313rem;
-  line-height: 1.75rem;
+  line-height: 1.5rem;
+  font-size: 1rem;
   font-weight: 500;
   white-space: nowrap;
 
