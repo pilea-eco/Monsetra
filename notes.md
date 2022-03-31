@@ -32,3 +32,10 @@ Text Button:
 # Content
 
 DataTable:
+
+* Rename header
+* RowMousePointer prop
+
+Floating Card:
+
+* Small, medium and large padding sizes

@@ -10,7 +10,7 @@
             @change="(value) => _checkAll(value)"
           ></checkbox>
         </th>
-        <th class="msr-table__column" v-for="col in dataframe.columns">{{ col }}</th>
+        <th class="msr-table__column" v-for="col in dataframe.columns">{{ _renameHeader(col) }}</th>
       </tr>
     </thead>
 
@@ -54,6 +54,10 @@ export default defineComponent({
         Object.keys(Colours).includes(value) ||
         new RegExp("^#([A-Fa-f0-9]{6})$").test(value)
     },
+    renameHeader: {
+      type: Object as PropType<{ [key: string]: string }>,
+    },
+    rowMousePointer: Boolean,
     checkbox: Boolean
   },
   data() {
@@ -82,6 +86,13 @@ export default defineComponent({
           return this._selected[index] != null;
         }
       }
+    },
+    _rowMousePointer() {
+      if (this.rowMousePointer) {
+        return "pointer";
+      } else {
+        return "default";
+      }
     }
   },
   methods: {
@@ -90,6 +101,8 @@ export default defineComponent({
       for (let key in this._selected) {
         selected.push(this._selected[key]);
       }
+      console.log({"Hello":"World!"})
+      console.log(selected)
       this.$emit("change", selected);
     },
     _checkAll(value: boolean) {
@@ -123,6 +136,13 @@ export default defineComponent({
       }
 
       this._emitChange();
+    },
+    _renameHeader(col: string) {
+      if (this.renameHeader) {
+        return this.renameHeader[col] || col;
+      } else {
+        return col;
+      }
     }
   },
 });
@@ -154,6 +174,7 @@ export default defineComponent({
 
 .msr-table .msr-table__body .msr-table__row:hover {
   background-color: #7f7f7f21;
+  cursor: v-bind(_rowMousePointer);
 }
 
 .msr-table .msr-table__body .msr-table__row .msr-table__data {

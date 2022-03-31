@@ -57,6 +57,12 @@ const tableData = new DataFrame(
   ]
 );
 
+const renameHeader = {
+  "Column 1": "Spiderman",
+  "Column 2": "Superman",
+  "Column 3": "Thor",
+};
+
 const dropdownItems = [
   { label: "Item 1", value: "item-1" },
   { label: "Item 2", value: "item-2" },
@@ -153,29 +159,86 @@ let emailValidator: TextFieldValidator = (value: string) => {
     
     <!-- ===== Content ===== -->
 
-    <data-table
-      class="cpt-margin"
-      :dataframe="tableData"
-      :colour="Colours.primary"
-      :checkbox="true">
-    </data-table>
+    <div class="cpt-space-x">
+      <data-table
+        class="cpt-margin"
+        :dataframe="tableData"
+        :colour="Colours.primary"
+        :checkbox="true"
+        rowMousePointer
+        @change="c => console.log(c)"
+        @row="r => console.log(r)">
+      </data-table>
+
+      <data-table
+        class="cpt-margin"
+        :dataframe="tableData"
+        :colour="Colours.primary"
+        :checkbox="true"
+        :renameHeader="renameHeader">
+      </data-table>
+    </div>
     
-    <floating-card
-      class="cpt-margin"
-      :hover="true"
-      colour="#ffffff">
-      <h1><b>Floating Card</b></h1>
-      <p>Hey, I am inside an floating card!</p>
-    </floating-card>
+    <div class="cpt-space-x">
+      <floating-card
+        class="cpt-margin"
+        :hover="true"
+        colour="#ffffff"
+        paddingSize="small">
+        <h1><b>Floating Card</b></h1>
+        <p>Hey, I am inside an floating card!</p>
+      </floating-card>
+      
+      <floating-card
+        class="cpt-margin"
+        :hover="true"
+        colour="#ffffff"
+        paddingSize="medium">
+        <h1><b>Floating Card</b></h1>
+        <p>Hey, I am inside an floating card!</p>
+      </floating-card>
+      
+      <floating-card
+        class="cpt-margin"
+        :hover="true"
+        colour="#ffffff"
+        paddingSize="large">
+        <h1><b>Floating Card</b></h1>
+        <p>Hey, I am inside an floating card!</p>
+      </floating-card>
+    </div>
     
-    <outlined-card
-      class="cpt-margin"
-      borderColour="#F2F2F2"
-      colour="#ffffff"
-      :hover="true">
-      <h1><b>Outlined Card</b></h1>
-      <p>Hey, I am inside an outlined card!</p>
-    </outlined-card>
+    <div class="cpt-space-x">
+      <outlined-card
+        class="cpt-margin"
+        borderColour="#ededed"
+        colour="#ffffff"
+        :hover="true"
+        paddingSize="small">
+        <h1><b>Outlined Card</b></h1>
+        <p>Hey, I am inside an outlined card!</p>
+      </outlined-card>
+      
+      <outlined-card
+        class="cpt-margin"
+        borderColour="#ededed"
+        colour="#ffffff"
+        :hover="true"
+        paddingSize="medium">
+        <h1><b>Outlined Card</b></h1>
+        <p>Hey, I am inside an outlined card!</p>
+      </outlined-card>
+      
+      <outlined-card
+        class="cpt-margin"
+        borderColour="#ededed"
+        colour="#ffffff"
+        :hover="true"
+        paddingSize="large">
+        <h1><b>Outlined Card</b></h1>
+        <p>Hey, I am inside an outlined card!</p>
+      </outlined-card>
+    </div>
     
     <hr class="divider">
 
