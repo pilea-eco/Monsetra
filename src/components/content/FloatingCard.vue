@@ -19,10 +19,6 @@ export default defineComponent({
       validator: (value: Colours | string) =>
         Object.keys(Colours).includes(value) ||
         new RegExp("^#([A-Fa-f0-9]{6})$").test(value)
-    },
-    paddingSize: {
-      type: String as PropType<"small" | "medium" | "large">,
-      default: "medium"
     }
   },
   computed: {
@@ -32,10 +28,6 @@ export default defineComponent({
       } else {
         return this.colour;
       }
-    },
-    _paddingSize() {
-      const sizes = ["small", "medium", "large"];
-      return `${10 + sizes.indexOf(this.paddingSize) * 10}px`
     }
   }
 });
@@ -46,6 +38,6 @@ export default defineComponent({
   border-radius: 8px;
   box-shadow: 0px 5px 13px #7d7d7d36;
   background-color: v-bind(_colour);
-  padding: v-bind(_paddingSize);
+  padding: 20px;
 }
 </style>

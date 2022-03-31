@@ -1,7 +1,6 @@
 <template>
   <button class="msr-icon-button" :filled="filled">
     <slot name="icon" width="21px" height="21px" :colour="_colour"></slot>
-    <span v-if="label != ''" class="msr-icon-button__label">{{ label }}</span>
   </button>
 </template>
 
@@ -19,11 +18,7 @@ export default defineComponent({
         Object.keys(Colours).includes(value) ||
         new RegExp("^#([A-Fa-f0-9]{6})$").test(value)
     },
-    filled: Boolean,
-    label: {
-      type: String,
-      default: ""
-    }
+    filled: Boolean
   },
   computed: {
     _colour() {
@@ -58,13 +53,6 @@ export default defineComponent({
       } else {
         return `${this.colour}57`;
       }
-    },
-    _labelColour() {
-      if (Object.keys(Colours).includes(this.colour)) {
-        return `rgb(var(--${this.colour}))`;
-      } else {
-        return this.colour;
-      }
     }
   },
 });
@@ -98,10 +86,5 @@ export default defineComponent({
 
 .msr-icon-button[filled="true"]:hover {
   box-shadow: 0px 13px 21px -5px v-bind(_shadowColour);
-}
-
-.msr-icon-button__label {
-  margin: 0px 8px 0 6px;
-  color: v-bind(_colour);
 }
 </style>
