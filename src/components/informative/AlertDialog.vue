@@ -9,7 +9,7 @@
 
       <div class="msr-alert-dialog__actions">
         <slot name="actions">
-          <TextButton @click="_hide" label="Ok" />
+          <OutlinedButton @click="_hide" label="Ok" />
         </slot>
       </div>
     </div>
@@ -19,7 +19,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import TextButton from "../button/TextButton.vue";
+import OutlinedButton from "../button/OutlinedButton.vue";
 import type { InformativeContext } from "../../types";
 
 export default defineComponent({
@@ -40,7 +40,7 @@ export default defineComponent({
     }
   },
   components: {
-    TextButton
+    OutlinedButton
   },
   data() {
     return {
@@ -124,25 +124,23 @@ export default defineComponent({
 
   min-width: 377px;
   min-height: 210px;
+
+  padding: 20px;
 }
 
 .msr-alert-dialog .msr-alert-dialog__title {
   font-weight: bold;
   font-size: 1.313rem;
   line-height: 1.75rem;
-
-  padding: 13px 21px;
 }
 
 .msr-alert-dialog .msr-alert-dialog__content {
   flex-grow: 1;
-  padding: 0px 21px 13px 21px;
+  padding: 5px 0;
 }
 
 .msr-alert-dialog .msr-alert-dialog__actions {
   display: flex;
   justify-content: flex-end;
-
-  padding: 0px 5px 5px 5px;
 }
 </style>

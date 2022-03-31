@@ -125,7 +125,7 @@ export default defineComponent({
   margin: 13px auto;
 
   color: v-bind(colour);
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.5rem;
 
   background-color: v-bind(_backgroundColour);

@@ -10,7 +10,7 @@
 
     <div class="msr-banner__action">
       <slot name="action">
-        <TextButton :colour="colour" @click="_hide" label="Ok" />
+        <OutlinedButton :colour="colour" @click="_hide" label="Ok" />
       </slot>
     </div>
   </div>
@@ -20,7 +20,7 @@
 import { defineComponent, type PropType } from "vue";
 
 import { type InformativeContext, Colours } from "../../types";
-import TextButton from "../button/TextButton.vue";
+import OutlinedButton from "../button/OutlinedButton.vue";
 
 export default defineComponent({
   name: "Banner",
@@ -48,7 +48,7 @@ export default defineComponent({
     }
   },
   components: {
-    TextButton
+    OutlinedButton
   },
   data() {
     return {
@@ -116,6 +116,10 @@ export default defineComponent({
   transition: all ease-out 300ms;
 }
 
+.msr-banner > * + * {
+  margin-left: 20px;
+}
+
 .msr-banner[show="false"] {
   display: flex;
 
@@ -142,6 +146,5 @@ export default defineComponent({
 
 .msr-banner .msr-banner__content .msr-banner__title {
   font-weight: bold;
-  margin-bottom: 5px;
 }
 </style>

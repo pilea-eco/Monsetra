@@ -183,66 +183,21 @@ let emailValidator: TextFieldValidator = (value: string) => {
       </data-table>
     </div>
     
-    <div class="cpt-space-x">
-      <floating-card
-        class="cpt-margin"
-        :hover="true"
-        colour="#ffffff"
-        paddingSize="small">
-        <h1><b>Floating Card</b></h1>
-        <p>Hey, I am inside an floating card!</p>
-      </floating-card>
-      
-      <floating-card
-        class="cpt-margin"
-        :hover="true"
-        colour="#ffffff"
-        paddingSize="medium">
-        <h1><b>Floating Card</b></h1>
-        <p>Hey, I am inside an floating card!</p>
-      </floating-card>
-      
-      <floating-card
-        class="cpt-margin"
-        :hover="true"
-        colour="#ffffff"
-        paddingSize="large">
-        <h1><b>Floating Card</b></h1>
-        <p>Hey, I am inside an floating card!</p>
-      </floating-card>
-    </div>
+    <floating-card
+      class="cpt-margin"
+      :hover="true"
+      colour="#ffffff">
+      <h1><b>Floating Card</b></h1>
+      <p>Hey, I am inside an floating card!</p>
+    </floating-card>
     
-    <div class="cpt-space-x">
-      <outlined-card
-        class="cpt-margin"
-        borderColour="#ededed"
-        colour="#ffffff"
-        :hover="true"
-        paddingSize="small">
-        <h1><b>Outlined Card</b></h1>
-        <p>Hey, I am inside an outlined card!</p>
-      </outlined-card>
-      
-      <outlined-card
-        class="cpt-margin"
-        borderColour="#ededed"
-        colour="#ffffff"
-        :hover="true"
-        paddingSize="medium">
-        <h1><b>Outlined Card</b></h1>
-        <p>Hey, I am inside an outlined card!</p>
-      </outlined-card>
-      
-      <outlined-card
-        class="cpt-margin"
-        borderColour="#ededed"
-        colour="#ffffff"
-        :hover="true"
-        paddingSize="large">
-        <h1><b>Outlined Card</b></h1>
-        <p>Hey, I am inside an outlined card!</p>
-      </outlined-card>
-    </div>
+    <outlined-card
+      class="cpt-margin"
+      borderColour="#ededed"
+      colour="#ffffff">
+      <h1><b>Outlined Card</b></h1>
+      <p>Hey, I am inside an outlined card!</p>
+    </outlined-card>
     
     <hr class="divider">
 
@@ -330,7 +285,7 @@ let emailValidator: TextFieldValidator = (value: string) => {
       title="Banner"
       content="This is a banner."
       :colour="Colours.primary"
-      :duration="5000"
+      :duration="100000"
       @context="ctx => ctx_banner = ctx">
     </banner>
     
