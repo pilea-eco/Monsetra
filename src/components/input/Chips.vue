@@ -97,7 +97,7 @@ export default defineComponent({
   user-select: none;
   cursor: pointer;
 
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 500;
 

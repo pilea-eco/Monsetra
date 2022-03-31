@@ -137,7 +137,7 @@ export default defineComponent({
 
 .msr-animated-text-field input {
   padding: 18px 13px 8px 13px;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.5rem;
   width: 100%;
 
@@ -193,7 +193,7 @@ export default defineComponent({
   color: #585858;
   font-size: 0.625rem;
   line-height: 0.813rem;
-  transform: translate(0px, -0.85rem);
+  transform: translate(0px, -1rem);
 
   transition: transform ease-out 100ms;
 }

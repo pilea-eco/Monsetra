@@ -64,14 +64,18 @@ const renameHeader = {
 };
 
 const dropdownItems = [
-  { label: "Item 1", value: "item-1" },
-  { label: "Item 2", value: "item-2" },
-  { label: "Item 3", value: "item-3" }
+  { label: "Octagon", value: "item-1" },
+  { label: "Pentagon", value: "item-2" },
+  { label: "Dodecahedron", value: "item-3" }
 ] as DropdownItem[];
 
 let ctx_alertDialog: InformativeContext;
 let ctx_banner: InformativeContext;
 let ctx_snackbar: InformativeContext;
+
+const data = reactive({
+  input: ""
+})
 
 let emailValidator: TextFieldValidator = (value: string) => {
   if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
@@ -245,20 +249,32 @@ let emailValidator: TextFieldValidator = (value: string) => {
     
     
     <!-- ===== Inputs ===== -->
-
+    
     <animated-text-field
       class="cpt-margin"
       label="Animated Text Field"
       :colour="Colours.primary"
       :type="TextFieldType.email"
-      :validator="emailValidator">
+      :validator="emailValidator"
+      v-model:modelValue="data.input">
     </animated-text-field>
+    
+    <span>{{ data.input }}</span>
+    
+    <static-text-field
+      class="cpt-margin"
+      label="Static Text Field"
+      :colour="Colours.primary"
+      :type="TextFieldType.email"
+      :validator="emailValidator"
+      v-model:modelValue="data.input">>
+    </static-text-field>
     
     <checkbox
       class="cpt-margin"
       :colour="Colours.primary"
       :size="18"
-      checked>
+      :checked="true">
     </checkbox>
     
     <chips
@@ -268,21 +284,26 @@ let emailValidator: TextFieldValidator = (value: string) => {
       :colour="Colours.primary">
     </chips>
     
-    <dropdown
-      :alignment="DropdownAlignment.left"
-      :items="dropdownItems"
-      :colour="Colours.primary"
-      @change="item => alert(item)">
-      <outlined-button label="Dropdown" :colour="Colours.primary"></outlined-button>
-    </dropdown>
-    
-    <static-text-field
-      class="cpt-margin"
-      label="Static Text Field"
-      :colour="Colours.primary"
-      :type="TextFieldType.email"
-      :validator="emailValidator">
-    </static-text-field>
+    <div class="cpt-space-x">
+      <dropdown
+        class="cpt-margin"
+        :alignment="DropdownAlignment.left"
+        :items="dropdownItems"
+        :colour="Colours.primary"
+        position="bottom"
+        @change="item => alert(item)">
+        <outlined-button label="Dropdown Bottom" :colour="Colours.primary"></outlined-button>
+      </dropdown>
+      <dropdown
+        class="cpt-margin"
+        :alignment="DropdownAlignment.left"
+        :items="dropdownItems"
+        :colour="Colours.primary"
+        position="right"
+        @change="item => alert(item)">
+        <outlined-button label="Dropdown Right" :colour="Colours.primary"></outlined-button>
+      </dropdown>
+    </div>
     
     <Switch
       class="cpt-margin"

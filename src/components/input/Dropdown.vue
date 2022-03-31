@@ -40,6 +40,10 @@ export default defineComponent({
       default: () => Colours.primary,
       validator: (value: Colours | string) => Object.keys(Colours).includes(value) ||
         new RegExp("^#([A-Fa-f0-9]{6})$").test(value)
+    },
+    position: {
+      type: String as PropType<"bottom" | "right">,
+      default: "bottom"
     }
   },
   emits: {
@@ -52,6 +56,25 @@ export default defineComponent({
     return {
       _show: false,
     };
+  },
+  computed: {
+    _position() {
+      if (this.position == "bottom") {
+        return {
+          top: "100%",
+          left: "0%",
+          mt: "5px",
+          ml: "0px",
+        }
+      } else {
+        return {
+          top: "0%",
+          left: "100%",
+          mt: "0px",
+          ml: "5px",
+        }
+      }
+    }
   },
   methods: {
     _update(item: string) {
@@ -76,6 +99,7 @@ export default defineComponent({
 <style scoped>
 .msr-dropdown {
   direction: v-bind(alignment);
+  position: relative;
 }
 
 .msr-dropdown .msr-dropdown__list {
@@ -86,8 +110,14 @@ export default defineComponent({
 
   border-radius: 8px;
   box-shadow: 0px 2px 13px rgba(125, 125, 125, 0.21);
+  
   transform-origin: left top;
-  margin-top: 5px;
+  top: v-bind('_position.top');
+  left: v-bind('_position.left');
+  margin-top: v-bind('_position.mt');
+  margin-left: v-bind('_position.ml');
+  
+  padding: 3px;
 
   transition: all ease-out 100ms;
 }

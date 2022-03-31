@@ -134,8 +134,8 @@ export default defineComponent({
 }
 
 .msr-static-text-field input {
-  padding: 13px;
-  font-size: 1.125rem;
+  padding: 10px;
+  font-size: 1rem;
   line-height: 1.5rem;
   width: 100%;
 
@@ -158,6 +158,10 @@ export default defineComponent({
   transition: all ease-out 100ms;
 }
 
+.msr-static-text-field__input > div {
+  margin-bottom: 0.5rem;
+}
+
 /* Input Focus */
 .msr-static-text-field input:focus {
   background-color: v-bind(_backgroundColour);
@@ -175,7 +179,7 @@ export default defineComponent({
   color: #585858;
   font-size: 0.625rem;
   line-height: 0.813rem;
-  transform: translate(0px, -0.85rem);
+  transform: translate(0px, -1rem);
 
   transition: transform ease-out 100ms;
 }

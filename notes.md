@@ -1,8 +1,8 @@
+Default: Font size to 1rem
+
 # Buttons
 
-* Font size to 1rem
-
-Big Button:
+Big, Outlined, Small:
 
 * Default
 
@@ -16,14 +16,6 @@ Link Button:
 * Default
 * Remove margin
 
-Outlined Button:
-
-* Default
-
-Small Button:
-
-* Default
-
 Text Button:
 
 * Default
@@ -35,7 +27,28 @@ DataTable:
 
 * Rename header
 * RowMousePointer prop
+* Error during change and row events
 
 Floating Card:
 
 * Small, medium and large padding sizes
+
+# Inputs
+
+Animated Text Field, Static Text Field:
+
+* Default
+* Message -1rem original position
+
+Static Text Field:
+
+* Label -0.5rem margin bottom
+
+Chips:
+
+* Default
+
+Dropdown:
+
+* Position of dropdown list (position prop)
+* Padding 3px
